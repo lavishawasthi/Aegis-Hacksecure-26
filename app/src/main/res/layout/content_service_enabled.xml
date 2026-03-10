@@ -1,0 +1,904 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey100">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Title & Description Header inside a subtle container -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Indicator Settings"
+                android:layout_marginBottom="16dp"
+                style="@style/TitleText"/>
+
+            <!-- CARD: Privacy Health Score -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/colorPrimaryDark"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp"
+                app:strokeWidth="0dp"
+                android:layout_marginBottom="24dp">
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:paddingStart="24dp"
+                    android:paddingEnd="24dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Privacy Health Score"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            android:textSize="18sp" />
+                        <TextView
+                            android:id="@+id/tvHealthScoreDesc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:textColor="@color/white"
+                            android:alpha="0.8"
+                            android:textSize="14sp"
+                            android:text="Based on last 24h of app activity." />
+                    </LinearLayout>
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp">
+
+                        <com.google.android.material.progressindicator.CircularProgressIndicator
+                            android:id="@+id/cp_health_score"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:progress="100"
+                            android:max="100"
+                            app:indicatorColor="@color/colorAccent"
+                            app:trackColor="#40FFFFFF"
+                            app:indicatorSize="72dp"
+                            app:trackThickness="6dp" />
+
+                        <TextView
+                            android:id="@+id/tvHealthScoreValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="100"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/senbold"
+                            android:textSize="24sp" />
+                    </FrameLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- CARD: Permissions / Indicators -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:strokeWidth="0dp"
+                android:layout_marginBottom="24dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
+
+                    <!-- Camera Setting -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="16dp">
+
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/switchCamera"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"/>
+
+                        <LinearLayout
+                            android:id="@+id/camText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvCamTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/camera_indicator_title"
+                                style="@style/HeadingText" />
+
+                            <TextView
+                                android:id="@+id/tvCamDes"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="@string/camera_indicator_description"
+                                style="@style/SubHeadingText" />
+                        </LinearLayout>
+                        
+                        <ImageView
+                            android:id="@+id/imgCamera"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_marginStart="8dp"
+                            app:tint="@color/colorPrimary"
+                            android:src="@drawable/camera" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/grey100"
+                        android:layout_marginHorizontal="16dp"/>
+
+                    <!-- Microphone Setting -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="16dp">
+
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/switchMic"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"/>
+
+                        <LinearLayout
+                            android:id="@+id/micText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvMicTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/microphone_indicator_title"
+                                style="@style/HeadingText" />
+
+                            <TextView
+                                android:id="@+id/tvMicDes"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="@string/microphone_indicator_description"
+                                style="@style/SubHeadingText" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/imgMic"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_marginStart="8dp"
+                            app:tint="@color/colorPrimary"
+                            android:src="@drawable/microphone" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/grey100"
+                        android:layout_marginHorizontal="16dp"/>
+
+                    <!-- Location Setting -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="16dp">
+
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/switchLocation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"/>
+
+                        <LinearLayout
+                            android:id="@+id/locationText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvLocationTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/location_indicator_title"
+                                style="@style/HeadingText" />
+
+                            <TextView
+                                android:id="@+id/tvLocationDes"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="@string/location_indicator_description"
+                                style="@style/SubHeadingText" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/imgLocation"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_marginStart="8dp"
+                            app:tint="@color/colorPrimary"
+                            android:src="@drawable/location" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alerts &amp; Notifications"
+                android:layout_marginBottom="16dp"
+                style="@style/TitleText"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:strokeWidth="0dp"
+                android:layout_marginBottom="24dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="16dp">
+
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/switchVibration"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/vibration_alert_title"
+                                style="@style/HeadingText" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="@string/vibration_alert_description"
+                                style="@style/SubHeadingText" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_marginStart="8dp"
+                            app:tint="@color/colorPrimary"
+                            android:src="@drawable/vibration" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/grey100"
+                        android:layout_marginHorizontal="16dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="16dp">
+
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/switchNotification"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/notification_alert_title"
+                                style="@style/HeadingText" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="@string/notification_alert_description"
+                                style="@style/SubHeadingText" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_marginStart="8dp"
+                            app:tint="@color/colorPrimary"
+                            android:src="@drawable/bell" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Suspicious Activity Logic"
+                android:layout_marginBottom="16dp"
+                style="@style/TitleText"/>
+
+            <!-- CARD: Suspicious Detection -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:strokeWidth="0dp"
+                android:layout_marginBottom="24dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="16dp">
+
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/switchSuspicious"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Suspicious Activity Logic"
+                                style="@style/HeadingText" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="Detect and alert potentially malicious camera, mic, or location usage."
+                                style="@style/SubHeadingText" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_marginStart="8dp"
+                            app:tint="@color/colorPrimary"
+                            android:src="@drawable/issue" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/grey100"
+                        android:layout_marginHorizontal="16dp"/>
+
+                    <LinearLayout
+                        android:id="@+id/whitelistText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="16dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:padding="4dp"
+                            app:tint="@color/colorPrimary"
+                            android:src="@drawable/ic_heart" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/whitelist_title"
+                                style="@style/HeadingText" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="@string/whitelist_description"
+                                style="@style/SubHeadingText" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/right"
+                            app:tint="@color/colorTextSecondary" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="16dp">
+
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/switchScreenOff"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/screen_off_monitoring_title"
+                            style="@style/HeadingText" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="16dp">
+
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/switchAppInfo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/app_info_indicator_title"
+                                style="@style/HeadingText" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="@string/app_info_indicator_description"
+                                style="@style/SubHeadingText" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@drawable/controls"
+                            app:tint="@color/colorPrimary" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dashboard &amp; Logs"
+                android:layout_marginBottom="16dp"
+                style="@style/TitleText"/>
+
+            <!-- CARD: Logs -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:strokeWidth="0dp"
+                android:layout_marginBottom="24dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Risk Analysis Item -->
+                    <LinearLayout
+                        android:id="@+id/riskText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="16dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:padding="4dp"
+                            app:tint="@color/colorPrimary"
+                            android:src="@drawable/ic_caution" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Risk Analysis"
+                                style="@style/HeadingText" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="Analyze app behavior and automatically revoke permissions."
+                                style="@style/SubHeadingText" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/right"
+                            app:tint="@color/colorTextSecondary" />
+                    </LinearLayout>
+                   
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/grey100"
+                        android:layout_marginHorizontal="16dp"/>
+
+                    <!-- Logs Item -->
+                    <LinearLayout
+                        android:id="@+id/logsText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="16dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:id="@+id/imgLogs"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:padding="8dp"
+                            android:background="@android:color/transparent"
+                            app:tint="@color/colorAccent"
+                            android:src="@drawable/logs" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvLogsTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/indicator_logs_title"
+                                style="@style/HeadingText" />
+
+                            <TextView
+                                android:id="@+id/tvLogsDes"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="@string/indicator_logs_description"
+                                style="@style/SubHeadingText" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/switchLogs"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/right"
+                            app:tint="@color/colorTextSecondary" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/grey100"
+                        android:layout_marginHorizontal="16dp"/>
+
+                    <!-- Suspicious Activities Item -->
+                    <LinearLayout
+                        android:id="@+id/suspiciousText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="16dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:padding="8dp"
+                            android:background="@android:color/transparent"
+                            app:tint="@color/colorAccent"
+                            android:src="@drawable/issue" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Suspicious Activities"
+                                style="@style/HeadingText" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="View detected risks and background violations"
+                                style="@style/SubHeadingText" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/switchSuspiciousLogs"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/right"
+                            app:tint="@color/colorTextSecondary" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Indicator Style"
+                android:layout_marginBottom="16dp"
+                style="@style/TitleText"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:strokeWidth="0dp"
+                android:layout_marginBottom="24dp">
+
+                <LinearLayout
+                    android:id="@+id/settingsText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="16dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/imgSettings"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:padding="8dp"
+                        android:background="@android:color/transparent"
+                        app:tint="@color/colorPrimary"
+                        android:src="@drawable/controls" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvSettingsTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Appearance"
+                            style="@style/HeadingText" />
+
+                        <TextView
+                            android:id="@+id/tvSettingsDes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Customize colors, size and opacity of indicators"
+                            style="@style/SubHeadingText" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/switchSettings"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/right"
+                        app:tint="@color/colorTextSecondary" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Support &amp; Requests"
+                android:layout_marginBottom="16dp"
+                style="@style/TitleText"/>
+
+            <!-- CARD: Support -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
+
+                    <!-- Issue Item -->
+                    <LinearLayout
+                        android:id="@+id/issueText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="16dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:id="@+id/imageIssue"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:padding="8dp"
+                            android:background="@android:color/transparent"
+                            app:tint="@color/colorPrimary"
+                            android:src="@drawable/issue" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvIssueTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/report_issue_title"
+                                style="@style/HeadingText" />
+
+                            <TextView
+                                android:id="@+id/tvIssueDes"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="@string/report_issue_description"
+                                style="@style/SubHeadingText" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/switchIssue"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/right"
+                            app:tint="@color/colorTextSecondary" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

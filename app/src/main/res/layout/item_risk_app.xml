@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp"
+    app:strokeWidth="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvRiskAppName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/senbold"
+            android:text="App Name"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/tvRiskLevel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvRiskAppId"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/senregular"
+            android:text="com.example.app"
+            android:textColor="@color/colorTextSecondary"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/tvRiskLevel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvRiskAppName" />
+
+        <TextView
+            android:id="@+id/tvRiskLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_bg_danger"
+            android:fontFamily="@font/senbold"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="4dp"
+            android:text="HIGH"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvRiskScoreVal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/senbold"
+            android:text="Score: 85"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/tvRiskLevel"
+            app:layout_constraintBottom_toBottomOf="@+id/tvRiskLevel"
+            app:layout_constraintTop_toTopOf="@+id/tvRiskLevel" />
+
+        <LinearLayout
+            android:id="@+id/llStats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintTop_toBottomOf="@+id/tvRiskAppId">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sensor Usage"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tvSensorDuration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/senbold"
+                    android:text="0m"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Active Time (Battery)"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tvUsageTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/senbold"
+                    android:text="0m"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
