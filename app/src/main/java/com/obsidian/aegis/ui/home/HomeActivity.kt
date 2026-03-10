@@ -234,6 +234,10 @@ class HomeActivity : AppCompatActivity() {
             openRiskAnalysisScreen()
         }
 
+        serviceEnabledBinding.sensorText.setOnClickListener {
+            openSensorAnalysisScreen()
+        }
+
 
 //        serviceEnabledBinding.shareText.setOnClickListener {
 //            this.openSharingScreen(HomeViewModel.SHARING_TEXT)
@@ -251,8 +255,8 @@ class HomeActivity : AppCompatActivity() {
             this.openBrowser(HomeViewModel.LINKEDIN)
         }
 
-        binding.contentCredits.tvFossHacks.setOnClickListener {
-            this.openBrowser(HomeViewModel.FOSSHACKS)
+        binding.contentCredits.tvHackSecure.setOnClickListener {
+            this.openBrowser(HomeViewModel.HACKSECURE)
         }
     }
 
@@ -286,6 +290,9 @@ class HomeActivity : AppCompatActivity() {
         this.goToActivity(com.obsidian.aegis.ui.risk.RiskActivity::class.java)
     }
 
+    private fun openSensorAnalysisScreen() {
+        this.goToActivity(com.obsidian.aegis.ui.risk.SensorAnalysisActivity::class.java)
+    }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
