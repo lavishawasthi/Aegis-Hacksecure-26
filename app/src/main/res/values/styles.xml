@@ -1,0 +1,46 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowBackground">@color/grey100</item>
+    </style>
+
+    <style name="TitleText">
+        <item name="android:textSize">28sp</item>
+        <item name="fontFamily">@font/senbold</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="SubtitleText">
+        <item name="android:textSize">16sp</item>
+        <item name="fontFamily">@font/senbold</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="HeadingText">
+        <item name="android:textSize">18sp</item>
+        <item name="fontFamily">@font/senbold</item>
+        <item name="android:textColor">@color/colorTextPrimary</item>
+    </style>
+
+    <style name="SubHeadingText">
+        <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/senregular</item>
+        <item name="android:textColor">@color/colorTextSecondary</item>
+    </style>
+
+    <style name="MiltiSwitch">
+        <item name="selectedColor">@color/colorAccent</item>
+        <item name="strokeRadius">5dp</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="textSize">14sp</item>
+        <item name="typeface">senbold.otf</item>
+    </style>
+
+</resources>

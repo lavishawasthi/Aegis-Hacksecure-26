@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- New Primary Colors (Indigo & Rose Palette) -->
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#E91E63</color>
+
+    <!-- Backgrounds & Surfaces -->
+    <color name="blackPrimary">#212121</color>
+    <color name="blackSecondary">#757575</color>
+    <color name="grey100">#F3F4F6</color>
+
+    <!-- Indicator specific colors -->
+    <color name="mic">#FF9800</color>
+    <color name="cam">#4CAF50</color>
+
+    <!-- Legacy / Misc -->
+    <color name="playstore">#4CAF50</color>
+
+    <!-- Text styling -->
+    <color name="colorTextPrimary">#212121</color>
+    <color name="colorTextSecondary">#757575</color>
+    <color name="colorBadge">#FFC107</color>
+
+    <color name="positiveButtonTextColor">@color/colorPrimary</color>
+    <color name="negativeButtonTextColor">@color/colorTextSecondary</color>
+</resources>
